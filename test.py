@@ -119,7 +119,7 @@ def vision(im,camera_matrix,dist_coeffs):
   COLORS = (
   #(60,120,100,216,21,245), # dark green
   #(93,130,0,255,0,255), # bleu
-  (0,30,150,255,0,255), # orange
+  (0,30,100,255,0,255), # orange
   #(22,46,118,248,90,255), # yellow
   #(46,93,89,255,0,255), # green
   #(0,255,0,255,0,45), # black
@@ -168,6 +168,7 @@ def main_video():
   cap = cv2.VideoCapture(1)
   cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640);
   cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480);
+  cap.set(cv2.CAP_PROP_FRAME_FPS, 2);
 
   while True:
     r,im = cap.read()
