@@ -16,9 +16,9 @@ def main():
 
   images = itertools.cycle(glob("vlcsnap-2018-04-22-*"))
 
-  cap = cv2.VideoCapture(0)
-  cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280);
-  cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720);
+  cap = cv2.VideoCapture(1)
+  cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640);
+  cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480);
 
   cv2.namedWindow("o")
   cv2.createTrackbar("H-","o",60,255,nothing)
@@ -30,7 +30,8 @@ def main():
 
   while True:
     r,im = cap.read()
-
+    
+    cv2.imshow("im",im)
     #im = cv2.imread(next(images))
     hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
     #hsv = cv2.bilateralFilter(hsv, 5, 120, 120)
